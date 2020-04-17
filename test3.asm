@@ -1,0 +1,20 @@
+INPUT   RD      STDIN
+	LDF	#7
+	DIVF	#3
+	LDX	TOP
+	STF	STACK, X
+	FIX	1
+        ADD     #2
+	ADD	ZERO
+        WD	STDOUT
+	J       STOP
+
+STOP    J       STOP
+
+
+TMP     RESB	10
+STDIN   BYTE    0
+STDOUT  BYTE    1
+ZERO	WORD	0x30
+STACK	RESB	200
+TOP	WORD	0x3
